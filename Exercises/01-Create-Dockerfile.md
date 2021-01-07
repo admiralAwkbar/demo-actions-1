@@ -1,8 +1,8 @@
 # Create the dockerfile
 
-In this session, we are going to be deploying an application within a Docker container. Before we can deploy our app, we need to begin setting up a foundation to make changes to.
+In this session, we are going to be deploying an application within a **Docker** container. Before we can deploy our app, we need to begin setting up a foundation to make changes to.
 
-### Exercise: Add dockerfile
+### Exercise: Add Dockerfile
 
 1. Create a new branch called `Docker`
 1. In the root of the repository, create a new file named: `Dockerfile`
@@ -14,13 +14,13 @@ In this session, we are going to be deploying an application within a Docker con
       ### Dockerfile to run some Some Build ###
       #########################################
       #########################################
-
+ 
+      # This is a copy of the GitHub Action runner
       FROM myoung34/github-runner:latest
-
+      
       #########################################
       # Variables #
       #########################################
-
       ARG orgname="organization name"
       ARG reponame="repository name"
 
