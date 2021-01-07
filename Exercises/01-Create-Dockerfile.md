@@ -57,5 +57,5 @@ In this session, we are going to be deploying an application within a Docker con
 
       > **NOTE:** Update the **orgname** and **reponame** variables to your organization and repository names.
 
-1. Commit the file
-1. Open a pull Request and merge the `Docker` branch into the `main` branch.
+1. Commit the file.
+1. Open a pull request and merge the `Docker` branch into the `main` branch.
