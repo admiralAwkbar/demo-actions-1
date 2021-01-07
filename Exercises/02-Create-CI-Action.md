@@ -7,7 +7,7 @@ GitHub Actions run off of workflow files that are managed and maintained in your
 ## Add a GitHub Action workflow file
 
 1. Create a new branch of code called `CI`
-1. Create a new file named `.github/workflows/ci.md`
+1. Create a new file named `.github/workflows/ci.yml`
 1. Copy the code below to the newly created file:
 
   ```yaml
