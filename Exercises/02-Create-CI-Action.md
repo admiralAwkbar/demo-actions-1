@@ -1,8 +1,8 @@
 # Creating basic CI Github Action
-This exercise will walk you through setting up Continuous Integration on your current repository.
-The objective of Continuous Integration is to achieve constant feedback on your changes to your code base and begin the process of testing and deploying of your code base.
+This exercise will walk you through setting up *Continuous Integration* on your current repository.
+The objective of *Continuous Integration* is to achieve constant feedback on your changes to your code base and begin the process of testing and deploying your code base.
 
-GitHub Actions run off of workflow files that are managed and maintained in your repository. The first action we are going to "install" on our repository uses an open source Action called the [Super Linter](https://github.com/github/super-linter). This action will review changes to the code and run a linter against it to ensure code sanity.
+**GitHub Actions** run off of workflow files that are managed and maintained in your repository. The first action we are going to "install" on our repository uses an open source Action called [Docker Build](https://github.com/docker/build-push-action). This action will try to build the current `Dockerfile` and see if it compiles successfully.
 
 ## Add a GitHub Action workflow file
 
@@ -84,7 +84,7 @@ This workflow file is set up to run when a push is made to branches in the repos
         - 'main'
 ```
 
-When we push a change to a branch, the GitHub Action will clone the repository code base, and run the Super Linter against the changes.
+When we push a change to a branch, the GitHub Action will clone the repository code base, and run the docker build against the changes.
 
 ## Running your GitHub Action
 
