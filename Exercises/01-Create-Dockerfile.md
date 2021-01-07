@@ -18,6 +18,13 @@ In this session, we are going to be deploying an application within a Docker con
       FROM myoung34/github-runner:latest
 
       #########################################
+      # Variables #
+      #########################################
+
+      ARG orgname="organization name"
+      ARG reponame="repository name"
+
+      #########################################
       # Label the instance and set maintainer #
       #########################################
       LABEL com.github.actions.name="Some Image" \
@@ -26,9 +33,9 @@ In this session, we are going to be deploying an application within a Docker con
             com.github.actions.color="red" \
             maintainer="GitHub DevOps <github_devops@github.com>" \
             org.opencontainers.image.authors="GitHub DevOps <github_devops@github.com>" \
-            org.opencontainers.image.url="https://github.com/ORG_NAME/REPO_NAME" \
-            org.opencontainers.image.source="https://github.com/ORG_NAME/REPO_NAME" \
-            org.opencontainers.image.documentation="https://github.com/ORG_NAME/REPO_NAME" \
+            org.opencontainers.image.url="https://github.com/${orgname}/${reponame}" \
+            org.opencontainers.image.source="https://github.com/${orgname}/${reponame}" \
+            org.opencontainers.image.documentation="https://github.com/${orgname}/${reponame}" \
             org.opencontainers.image.vendor="GitHub" \
             org.opencontainers.image.description="Its a build image"
 
@@ -48,7 +55,7 @@ In this session, we are going to be deploying an application within a Docker con
       ENTRYPOINT ["/action/lib/entrypoint.sh"]
       ```
 
-      > **NOTE:** Update **ORG_NAME** and **REPO_NAME** to your current repository
+      > **NOTE:** Update the **orgname** and **reponame** variables to your organization and repository names.
 
 1. Commit the file
 1. Open a pull Request and merge the `Docker` branch into the `main` branch.
