@@ -61,7 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-As you can see from the code above, this will run a job on all pushes, but not to a `main` or `master` branch.  
+As you can see from the code above, this will run a job on all pushes, but not to a `main` or `master` branch.
 It will then clone your code base, and run a linter against it to validate code sanity.
 
 ## Step 2
@@ -72,15 +72,13 @@ It will then clone your code base, and run a linter against it to validate code 
 
 ## Step 3
 Protecting your branches is essential to having a proper flow in your repository.
-On GitHub, navigate to the main page of the repository.
-Under your repository name, click  Settings.
-Repository settings button
-In the left menu, click Branches.
-Repository options sub-menu
-Next to "Branch protection rules", click Add rule.
-Add branch protection rule button
-Under "Branch name pattern", type the branch name or pattern you want to protect.
-Branch rule field 
-Optionally, you can configure specific branch rule settings.
-Protected branch rule settings
-To confirm your branch protection rule, click Create or Save changes.
+
+1. On GitHub, navigate to the main page of the repository.
+1. Under your repository name, click  Settings.
+1. In the left menu, click Branches.
+1. Next to "Branch protection rules", click Add rule.
+1. Under "Branch name pattern", type the branch name or pattern you want to protect.
+
+    > Optionally, you can configure specific branch rule settings.
+
+1. To confirm your branch protection rule, click Create or Save changes.
