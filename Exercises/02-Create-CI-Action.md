@@ -52,15 +52,26 @@ GitHub Actions run off of workflow files that are managed and maintained in your
         ##########################
         - name: Checkout Code
           uses: actions/checkout@master
+        
+        ########################
+        # Setup Docker build X #
+        ########################
+        - name: Setup BuildX
+          uses: docker/setup-buildx-action@v1
 
-        ################################
-        # Run Linter against code base #
-        ################################
-        - name: Lint Code Base
-          uses: github/super-linter@v3
-          env:
-            VALIDATE_ALL_CODEBASE: false
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ##############################
+        # Build the docker container #
+        ##############################
+        - name: Build Docker container
+          uses: docker/build-push-action@v2
+          with:
+            context: .
+            file: ./Dockerfile
+            build-args: |
+              BUILD_DATE=${{ env.BUILD_DATE }}
+              BUILD_REVISION=${{ github.sha }}
+              BUILD_VERSION=${{ github.sha }}
+            push: false
   ```
 1. Commit the file.
 
