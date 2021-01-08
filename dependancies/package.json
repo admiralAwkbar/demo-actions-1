@@ -1,0 +1,8 @@
+{
+  "name": "demo-action",
+  "dependencies": {
+    "jsonlint": "^1.6.3",
+    "markdownlint-cli": "^0.26.0",
+    "prettyjson": "^1.2.1"
+  }
+}
