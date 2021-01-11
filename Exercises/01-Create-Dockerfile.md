@@ -8,7 +8,7 @@ In this session, we are going to be deploying an application within a **Docker**
 1. In the root of the repository, create a new file named: `Dockerfile`
 1. Copy and paste the following code snippet into the new file:
 
-> **:warning: NOTE:** Update the **orgname** and **reponame** variables to your organization and repository names.
+      > **:warning: NOTE:** Update the **orgname** and **reponame** variables to your organization and repository names.
 
       ```Dockerfile
       #########################################
