@@ -1,4 +1,5 @@
 # Creating basic CI Github Action
+
 This exercise will walk you through setting up *Continuous Integration* on your current repository.
 The objective of *Continuous Integration* is to achieve constant feedback on your changes to your code base and begin the process of testing and deploying your code base.
 
