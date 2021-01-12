@@ -1,0 +1,48 @@
+# :pencil2: Exercises
+
+The goal of these exercises is to create a CI/CT/CD workflow with GitHub Actions.
+
+As you work progressively along all the ordered files, your workflow will become more complex and thorough.
+
+### Steps 1: Create Continuous Integration (CI)
+
+- [Create Dockerfile](./01-Create-Dockerfile.md)
+- [Create CI Action](./02-Create-CI-Action.md)
+
+### Steps 2: Adding more complexity to the CI
+
+- These steps would be more informative if you adopt a Git Flow:
+  - [Create QA Branch](Exercises/02.A-Create-QA-Branch.md)
+  - [Create Context Job](Exercises/02.B-Create-Context-Job.md)
+
+### Steps 3: Dependency Management
+
+- [Create Dependabot Config](Exercises/03-Create-Dependabot-Config.md)
+- [Lock Your Dependencies](Exercises/03.A-Lock-Dependencies.md)
+
+### Step 4: Add Continuous Testing (CT)
+
+- [Create CT Actions](Exercises/04-Create-CT-Actions.md)
+
+### Step 5: Actions for Artifacts Management
+
+- [Upload and Download Build Artifacts](Exercises/05-Upload-Download-Artifacts.md)
+
+### Step 6: Create Continuous Deployment (CD)
+
+- [Create CD Actions](Exercises/06-Create-CD-Actions.md)
+- [Deploy Docker Image](Exercises/06.A-Deploy-Prod.md)
+- [Deploy Release Images](Exercises/06.B-Deploy-Release.md)
+
+### Optional: Using Actions beyond CI/CT/CD
+
+- [Using Actions to Create Issues](Exercises/07.A-GitHub-Script-Actions.md)
+- [Using GitHub's API for Deployment to Update Environments](Exercises/07.B-Add-Deployment-API.md)
+- [**Advanced**: Wait for Steps to Require Other Jobs to Complete](Exercises/07.C-Add-Wait-For-Steps.md)
+- [**Advanced**: Additional information on Best Practices for Complex Workflows](Exercises/07.D-Split-Jobs-for-Speed.md)
+- [**Advanced**: Resuing a Local Action](Exercises/08-Create-New-Repo-To-Pull-In-Container.md)
+
+## :book: Additional Resources
+
+- [GitHub Actions Documentation](https://docs.github.com/en/free-pro-team@latest/actions)
+- [Self-paced Learning Lab Course on DevOps Pipeline with GitHub Actions](https://lab.github.com/githubtraining/devops-with-github-actions)
