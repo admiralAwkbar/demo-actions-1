@@ -52,7 +52,7 @@ The objective of *Continuous Integration* is to achieve constant feedback on you
           # Checkout the code base #
           ##########################
           - name: Checkout Code
-            uses: actions/checkout@master
+            uses: actions/checkout@v2
 
           ########################
           # Setup Docker build X #
