@@ -12,35 +12,35 @@ As you work progressively along all the ordered files, your workflow will become
 ### Steps 2: Adding more complexity to the CI
 
 - These steps would be more informative if you adopt a Git Flow:
-  - [Create QA Branch](Exercises/02.A-Create-QA-Branch.md)
-  - [Create Context Job](Exercises/02.B-Create-Context-Job.md)
+  - [Create QA Branch](./02.A-Create-QA-Branch.md)
+  - [Create Context Job](./02.B-Create-Context-Job.md)
 
 ### Steps 3: Dependency Management
 
-- [Create Dependabot Config](Exercises/03-Create-Dependabot-Config.md)
-- [Lock Your Dependencies](Exercises/03.A-Lock-Dependencies.md)
+- [Create Dependabot Config](./03-Create-Dependabot-Config.md)
+- [Lock Your Dependencies](./03.A-Lock-Dependencies.md)
 
 ### Step 4: Add Continuous Testing (CT)
 
-- [Create CT Actions](Exercises/04-Create-CT-Actions.md)
+- [Create CT Actions](./04-Create-CT-Actions.md)
 
 ### Step 5: Actions for Artifacts Management
 
-- [Upload and Download Build Artifacts](Exercises/05-Upload-Download-Artifacts.md)
+- [Upload and Download Build Artifacts](./05-Upload-Download-Artifacts.md)
 
 ### Step 6: Create Continuous Deployment (CD)
 
-- [Create CD Actions](Exercises/06-Create-CD-Actions.md)
-- [Deploy Docker Image](Exercises/06.A-Deploy-Prod.md)
-- [Deploy Release Images](Exercises/06.B-Deploy-Release.md)
+- [Create CD Actions](./06-Create-CD-Actions.md)
+- [Deploy Docker Image](./06.A-Deploy-Prod.md)
+- [Deploy Release Images](./06.B-Deploy-Release.md)
 
 ### Optional: Using Actions beyond CI/CT/CD
 
-- [Using Actions to Create Issues](Exercises/07.A-GitHub-Script-Actions.md)
-- [Using GitHub's API for Deployment to Update Environments](Exercises/07.B-Add-Deployment-API.md)
-- [**Advanced**: Wait for Steps to Require Other Jobs to Complete](Exercises/07.C-Add-Wait-For-Steps.md)
-- [**Advanced**: Additional information on Best Practices for Complex Workflows](Exercises/07.D-Split-Jobs-for-Speed.md)
-- [**Advanced**: Resuing a Local Action](Exercises/08-Create-New-Repo-To-Pull-In-Container.md)
+- [Using Actions to Create Issues](./07.A-GitHub-Script-Actions.md)
+- [Using GitHub's API for Deployment to Update Environments](./07.B-Add-Deployment-API.md)
+- [**Advanced**: Wait for Steps to Require Other Jobs to Complete](./07.C-Add-Wait-For-Steps.md)
+- [**Advanced**: Additional information on Best Practices for Complex Workflows](./07.D-Split-Jobs-for-Speed.md)
+- [**Advanced**: Resuing a Local Action](./08-Create-New-Repo-To-Pull-In-Container.md)
 
 ## :book: Additional Resources
 
