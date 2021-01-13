@@ -1,8 +1,9 @@
 # Uploading and Downloading build artifacts on Github Workflow
 
-- If your job produces a build artifact that users need to view, or needs to be passed to another build machine, the **Github Actions** upload and download can help with this process.
+- If your job produces a build artifact that users need to view, or need to be passed to another build machine, the **Github Actions** upload and download can help with this process.
 
 ### Exercise: Add Upload and Download
+
 1. Add the following code to your build pipeline, and it will then start publishing the artifact once the step has completed.
 
 1. Create a new branch called `Artifacts`
@@ -21,7 +22,7 @@
   with:
     name: my-artifact
 ```
-1. **Note:** Please update the path to an artifact that was created in the build process.
+> **Note:** Please update the path to an artifact that was created in the build process.
 
 ### Linkage
 - [Upload Artifact](https://github.com/actions/upload-artifact)
