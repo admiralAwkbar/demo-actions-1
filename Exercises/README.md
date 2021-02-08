@@ -40,7 +40,7 @@ As you work progressively along all the ordered files, your workflow will become
 - [Using GitHub's API for Deployment to Update Environments](./07.B-Add-Deployment-API.md)
 - [**Advanced**: Wait for Steps to Require Other Jobs to Complete](./07.C-Add-Wait-For-Steps.md)
 - [**Advanced**: Additional information on Best Practices for Complex Workflows](./07.D-Split-Jobs-for-Speed.md)
-- [**Advanced**: Resuing a Local Action](./08-Create-New-Repo-To-Pull-In-Container.md)
+- [**Advanced**: Reusing a Local Action](./08-Create-New-Repo-To-Pull-In-Container.md)
 
 ## :book: Additional Resources
 
