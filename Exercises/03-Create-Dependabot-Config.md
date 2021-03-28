@@ -1,6 +1,6 @@
 # Configure Dependabot
 
-In this session, we are going to be deploying [Dependabot](https://dependabot.com/) to your **Github Actions**. This is a built in tool inside **GitHub** that will help validate your code is up to date and free of known CVE's.
+In this session, we are going to be deploying [Dependabot](https://dependabot.com/) to your **GitHub Actions**. This is a built in tool inside **GitHub** that will help validate your code is up to date and free of known CVE's.
 
 ### Exercise: Add Dependabot config
 
