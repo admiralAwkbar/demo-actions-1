@@ -24,23 +24,27 @@ As you work progressively along all the ordered files, your workflow will become
 
 - [Create CT Actions](./04-Create-CT-Actions.md)
 
-### Step 5: Actions for Artifacts Management
+### Step 5: Security Scans
 
-- [Upload and Download Build Artifacts](./05-Upload-Download-Artifacts.md)
+- [Create Security Scan](./05-Create-Security-Scan.md)
 
-### Step 6: Create Continuous Deployment (CD)
+### Step 6: Actions for Artifacts Management
 
-- [Create CD Actions](./06-Create-CD-Actions.md)
-- [Deploy Docker Image](./06.A-Deploy-Prod.md)
-- [Deploy Release Images](./06.B-Deploy-Release.md)
+- [Upload and Download Build Artifacts](./06-Upload-Download-Artifacts.md)
+
+### Step 7: Create Continuous Deployment (CD)
+
+- [Create CD Actions](./07-Create-CD-Actions.md)
+- [Deploy Docker Image](./07.A-Deploy-Prod.md)
+- [Deploy Release Images](./07.B-Deploy-Release.md)
 
 ### Optional: Using Actions beyond CI/CT/CD
 
-- [Using Actions to Create Issues](./07.A-GitHub-Script-Actions.md)
-- [Using GitHub's API for Deployment to Update Environments](./07.B-Add-Deployment-API.md)
-- [**Advanced**: Wait for Steps to Require Other Jobs to Complete](./07.C-Add-Wait-For-Steps.md)
-- [**Advanced**: Additional information on Best Practices for Complex Workflows](./07.D-Split-Jobs-for-Speed.md)
-- [**Advanced**: Reusing a Local Action](./08-Create-New-Repo-To-Pull-In-Container.md)
+- [Using Actions to Create Issues](./08.A-GitHub-Script-Actions.md)
+- [Using GitHub's API for Deployment to Update Environments](./08.B-Add-Deployment-API.md)
+- [**Advanced**: Wait for Steps to Require Other Jobs to Complete](./08.C-Add-Wait-For-Steps.md)
+- [**Advanced**: Additional information on Best Practices for Complex Workflows](./08.D-Split-Jobs-for-Speed.md)
+- [**Advanced**: Reusing a Local Action](./09-Create-New-Repo-To-Pull-In-Container.md)
 
 ## :book: Additional Resources
 
