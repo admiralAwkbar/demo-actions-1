@@ -9,11 +9,11 @@ on:
       branch:
         description: 'Branch to deploy'
         required: true
-        default: 'Dev'
+        default: 'TEST'
       app_list:
         description: 'Comma separated list of apps to deploy'
         required: true
-        default: 'App1,App2'
+        default: 'App1,App2,App3'
 
 jobs:
   Deploy_Apps:
