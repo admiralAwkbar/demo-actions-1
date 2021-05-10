@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+name: Manual Deployment
+
+# Set the job to run manually
+on:
+  workflow_dispatch:
+    # Set the input variables you want to pull in
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'Dev'
+      app_list:
+        description: 'Comma separated list of apps to deploy'
+        required: true
+        default: 'App1,App2'
+
+jobs:
+  Deploy_Apps:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Running deployment of branch ${{ github.event.inputs.branch }}!"
+        echo "- Deploying the following Apps: ${{ github.event.inputs.app_list }}!"
