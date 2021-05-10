@@ -2,7 +2,7 @@
   "name": "demo-action",
   "dependencies": {
     "jsonlint": "^1.6.3",
-    "markdownlint-cli": "^0.26.0",
+    "markdownlint-cli": "^0.27.1",
     "prettyjson": "^1.2.1"
   }
 }
