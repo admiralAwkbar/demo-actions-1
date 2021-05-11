@@ -1,0 +1,128 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Docker Production
+
+# Controls when the action will run.
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  docker-prod-release:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # You could use the following lines to help make sure only X people start the workflow
+    # if: github.actor == 'admiralawkbar' || github.actor == 'jwiebalk'
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      #########################
+      # Install Docker BuildX #
+      #########################
+      - name: Install Docker BuildX
+        uses: docker/setup-buildx-action@v1
+
+      ######################################
+      # Login to GitHub Container Registry #
+      ######################################
+      - name: Login to GitHub Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GCR_USERNAME }}
+          password: ${{ secrets.GCR_TOKEN }}
+
+      # Update deployment API
+      - name: start deployment
+        uses: bobheadxi/deployments@v0.4.3
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: Production
+
+      # Create a GitHub Issue with the info from this build
+      - name: Create GitHub Issue
+        uses: actions/github-script@v3.1.0
+        id: create-issue
+        with:
+          # https://octokit.github.io/rest.js/v18#issues-create
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const create = await github.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Deploying to production",
+              body: 'Currently deploying...'
+            })
+            console.log('create', create)
+            return create.data.number
+
+      ########################################
+      # Convert repository name to lowercase #
+      ########################################
+      - name: Repository Name to lowercase
+        run: |
+          echo IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+        
+      ###########################################
+      # Build and Push containers to registries #
+      ###########################################
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ env.IMAGE_REPOSITORY }}:latest
+            ghcr.io/${{ env.IMAGE_REPOSITORY }}:v1
+
+      # Update Deployment API
+      - name: update deployment status
+        uses: bobheadxi/deployments@v0.4.3
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: https://github.com/orgs/${{github.repository_owner}}/packages?repo_name=${{github.repository.name}}
+
+      - name: Update issue success
+        uses: actions/github-script@v3.1.0
+        if: success()
+        with:
+          # https://octokit.github.io/rest.js/v18#issues-create
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: "${{ steps.create-issue.outputs.result }}",
+              title: "New issue created",
+              body: "Successful!y deployed production"
+            })
+
+      - name: Update issue failure
+        uses: actions/github-script@v3.1.0
+        if: failure()
+        with:
+          # https://octokit.github.io/rest.js/v18#issues-create
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: "${{ steps.create-issue.outputs.result }}",
+              title: "New issue created",
+              body: "Failed to deploy to production"
+            })
