@@ -83,8 +83,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/admiralawkbar/demo-actions-1:latest
-            ghcr.io/admiralawkbar/demo-actions-1:v1
+            ghcr.io/lukaspersonal/containers:latest
+            ghcr.io/lukaspersonal/containers:v1
 
       # Update Deployment API
       - name: update deployment status
