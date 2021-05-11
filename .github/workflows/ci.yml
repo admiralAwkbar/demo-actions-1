@@ -59,3 +59,10 @@ jobs:
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
           push: false
+      
+      # Upload an artifact to GitHub
+      - name: Upload Artifact to Github Build Job
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-dockerfile
+          path: Dockerfile
