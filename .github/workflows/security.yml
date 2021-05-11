@@ -51,8 +51,20 @@ jobs:
         with:
           languages: python
 
-      #######################
-      # Run CodeQL Analysis #
-      #######################
-      - name: Perform CodeQL Analysis
+
+      - name: Wait for app build success
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build-success
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: CI
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Perform CodeQL
+        if: steps.wait-for-build-success.outputs.conclusion == 'success'
         uses: github/codeql-action/analyze@v1
+
+      - name: Error message on failure
+        if: steps.wait-for-build-success.outputs.conclusion == 'failure'
+        run: echo "ERROR! Build failure, not running security!
+        
