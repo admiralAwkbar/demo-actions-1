@@ -28,7 +28,7 @@ jobs:
       # Install Docker BuildX #
       #########################
       - name: Install Docker BuildX
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v1.3.0
 
       ######################################
       # Login to GitHub Container Registry #
