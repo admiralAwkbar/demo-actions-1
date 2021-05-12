@@ -51,7 +51,7 @@ jobs:
 
       # Create a GitHub Issue with the info from this build
       - name: Create GitHub Issue
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v4.0.2
         id: create-issue
         with:
           # https://octokit.github.io/rest.js/v18#issues-create
@@ -98,7 +98,7 @@ jobs:
           env_url: https://github.com/orgs/${{github.repository_owner}}/packages?repo_name=${{github.repository.name}}
 
       - name: Update issue success
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v4.0.2
         if: success()
         with:
           # https://octokit.github.io/rest.js/v18#issues-create
@@ -113,7 +113,7 @@ jobs:
             })
 
       - name: Update issue failure
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v4.0.2
         if: failure()
         with:
           # https://octokit.github.io/rest.js/v18#issues-create
