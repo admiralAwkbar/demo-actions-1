@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          apt-get install git-lfs;
+          sudo apt-get install git-lfs;
           git-lfs --version
         
   build:
