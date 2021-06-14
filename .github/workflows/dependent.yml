@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+name: Dependent Build
+
+# Set the job to run manually
+on:
+  push:
+    branches-ignore: main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sudo apt-get install git-lfs;
+          git-lfs --version
+        
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hello World";
+          echo "Goodnight Moon!";
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "This is the test steps!";
+          echo "We should be running tests";
+          echo "such test, much wow...";
