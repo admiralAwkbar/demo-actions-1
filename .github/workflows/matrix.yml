@@ -7,16 +7,17 @@ on:
     branches-ignore: main
 
 jobs:
-  job1:
+  parallel-test:
     runs-on: ubuntu-latest
     strategy:
       # max-parallel: 2
       matrix:
-        run: ['run1', 'run2', 'run3']
+        tests: ['test1', 'test2', 'test3']
     steps:
-    - name: Matrix job ${{ matrix.run }}
+    - name: Matrix job ${{ matrix.tests }}
       run:  |
-        echo Run ${{ matrix.run }}
+        echo "Running test: ${{ matrix.tests }}"
         date
+        echo "Taking a quick nap..."
         sleep 15
         date
