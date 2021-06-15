@@ -13,7 +13,7 @@ jobs:
       # max-parallel: 2
       matrix:
         tests: ['test1', 'test2', 'test3']
-         os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
     - name: Matrix job ${{ matrix.tests }}
       run:  |
