@@ -8,11 +8,12 @@ on:
 
 jobs:
   parallel-test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       # max-parallel: 2
       matrix:
         tests: ['test1', 'test2', 'test3']
+         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
     - name: Matrix job ${{ matrix.tests }}
       run:  |
