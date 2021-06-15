@@ -6,17 +6,17 @@ on:
   push:
     branches-ignore: main
 
-    jobs:
-      job1:
-        runs-on: ubuntu-latest
-        strategy:
-          # max-parallel: 2
-          matrix:
-            run: ['run1', 'run2', 'run3']
-        steps:
-        - name: Matrix job ${{ matrix.run }}
-          run:  |
-            echo Run ${{ matrix.run }}
-            date
-            sleep 15
-            date
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    strategy:
+      # max-parallel: 2
+      matrix:
+        run: ['run1', 'run2', 'run3']
+    steps:
+    - name: Matrix job ${{ matrix.run }}
+      run:  |
+        echo Run ${{ matrix.run }}
+        date
+        sleep 15
+        date
