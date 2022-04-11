@@ -62,7 +62,7 @@ jobs:
       
       # Upload an artifact to GitHub
       - name: Upload Artifact to Github Build Job
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: my-dockerfile
           path: Dockerfile
