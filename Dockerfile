@@ -5,7 +5,7 @@
 #########################################
 
 # This is a copy of the GitHub Action runner
-FROM myoung34/github-runner:2.278.0-ubuntu-bionic
+FROM myoung34/github-runner:2.291.1-ubuntu-bionic
 
 #########################################
 # Variables #
